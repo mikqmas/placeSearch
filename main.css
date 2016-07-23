@@ -1,0 +1,107 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif;
+}
+#map {
+  height: 300px;
+  opacity: 0;
+}
+.controls {
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+  background-color: #fff;
+  font-size: 2em;
+  font-weight: 300;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 500px;
+  height: 50px;
+  margin-left: -250px;
+  z-index: 1;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+#target {
+  width: 345px;
+}
+
+#listings {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listings {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px;
+  align-items: center;
+  font-size: 3em;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  background-blend-mode: multiply;
+  transition: all 0.2s ease-in;
+  white-space: nowrap;
+}
+
+.listings:hover {
+  background-color: transparent;
+}
+
+.details {
+  width: 100%;
+  height: auto;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  white-space: normal;
+}
+
+@media (max-width: 600px) {
+  .listings {
+    font-size: 1.5em;
+  }
+  .details {
+    font-size: 15px;
+  }
+}

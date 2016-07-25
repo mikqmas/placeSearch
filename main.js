@@ -1,7 +1,4 @@
 function initAutocomplete() {
-  const title = document.createElement('div');
-  title.className = 'title';
-
   //Create the map UI element. Initially hidden.
   var mapEl = document.getElementById('map');
   var map = new google.maps.Map(mapEl, {
@@ -39,10 +36,9 @@ function initAutocomplete() {
   searchBox.addListener('places_changed', updateMap);
 
   function updateMap() {
-    //shows map
+    //shows map when first search is triggered.
     if(mapEl.style.opacity === ""){
       mapEl.style.opacity = "1.0";
-      mapEl.style.transition = "all 1s";
       google.maps.event.trigger(map, 'resize');
 
       input.style.top = "0px";
@@ -91,10 +87,6 @@ function initAutocomplete() {
       let photoUrl = typeof place.photos !== 'undefined' ?
         place.photos[0].getUrl({'maxWidth': 1000, 'maxHeight': 1000}) :
         "http://nemanjakovacevic.net/wp-content/uploads/2013/07/placeholder.png";
-
-      function _handleListingClick(thisPlace) {
-        alert(thisPlace.name);
-      }
 
       //Populate listings
       const listing = document.createElement('div');

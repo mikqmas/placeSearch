@@ -1,4 +1,7 @@
 function initAutocomplete() {
+  const title = document.createElement('div');
+  title.className = 'title';
+
   //Create the map UI element. Initially hidden.
   var mapEl = document.getElementById('map');
   var map = new google.maps.Map(mapEl, {
@@ -94,7 +97,7 @@ function initAutocomplete() {
       }
 
       //Populate listings
-      let listing = document.createElement('div');
+      const listing = document.createElement('div');
       listing.className = 'listings';
       listing.addEventListener("click", (e)=>{handleListClick(e, place);});
       listing.innerHTML = place.name;
@@ -104,7 +107,6 @@ function initAutocomplete() {
         listing.style.backgroundSize = 'cover';
       };
       newImg.src = photoUrl;
-      // listing.style.backgroundImage = `url(${photoUrl})`;
       listings.appendChild(listing);
 
       // Create a marker for each place.

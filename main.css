@@ -18,6 +18,28 @@ html, body {
   outline: none;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
+#search-button {
+  position: absolute;
+  z-index: 1;
+  background: transparent;
+  box-shadow: 2px 2px 10px #888;
+  transition: all 1s;
+  cursor: pointer;
+  border-radius: 50%;
+}
+#search-button:hover {
+  background: #ddd;
+}
+.initial {
+  left: 81%;
+  top: 41.7%;
+  padding: 12px;
+}
+.after {
+  left: 81%;
+  top: 10px;
+  padding: 4px;
+}
 
 #pac-input {
   background-color: #fff;
@@ -28,9 +50,9 @@ html, body {
   position: absolute;
   top: 40%;
   left: 50%;
-  width: 500px;
+  width: 60%;
   height: 50px;
-  margin-left: -250px;
+  margin-left: -30%;
   z-index: 1;
 }
 
@@ -74,11 +96,12 @@ html, body {
   font-size: 3em;
   color: white;
   text-shadow: 1px 1px 1px black;
-  background-size: cover;
+  background-image: url('./balls.gif');
+  background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
   background-blend-mode: multiply;
-  transition: all 0.2s ease-in;
+  transition: all 0.5s ease-in;
   white-space: nowrap;
 }
 

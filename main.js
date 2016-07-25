@@ -11,6 +11,15 @@ function initAutocomplete() {
   // Create the search box UI element.
   var input = document.getElementById('pac-input');
   var searchBox = new google.maps.places.SearchBox(input);
+  var searchButton = document.getElementById('search-button');
+
+  // Trigger search on button click
+  searchButton.onclick = function () {
+    google.maps.event.trigger(input, 'focus')
+    google.maps.event.trigger(input, 'keydown', {
+        keyCode: 13
+    });
+  };
 
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {
@@ -37,8 +46,9 @@ function initAutocomplete() {
       input.style.height = "32px";
       input.style.fontSize = "1em";
       input.style.transition = "all 1s";
-    }
 
+      searchButton.className = "after";
+    }
     //Grabs all places from input.
     var places = searchBox.getPlaces();
     if (places.length === 0) {
@@ -88,7 +98,13 @@ function initAutocomplete() {
       listing.className = 'listings';
       listing.addEventListener("click", (e)=>{handleListClick(e, place);});
       listing.innerHTML = place.name;
-      listing.style.backgroundImage = `url(${photoUrl})`;
+      const newImg = new Image;
+      newImg.onload = function() {
+        listing.style.backgroundImage = `url(${this.src})`;
+        listing.style.backgroundSize = 'cover';
+      };
+      newImg.src = photoUrl;
+      // listing.style.backgroundImage = `url(${photoUrl})`;
       listings.appendChild(listing);
 
       // Create a marker for each place.
